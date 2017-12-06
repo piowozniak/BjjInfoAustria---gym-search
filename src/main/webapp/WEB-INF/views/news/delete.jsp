@@ -18,6 +18,7 @@
 		<div>
 			<f:hidden path="id" />
 		</div>
+		<a href="../menu">go back to menu</a>
 	</f:form>
 </body>
 </html>

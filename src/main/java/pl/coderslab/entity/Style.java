@@ -24,9 +24,8 @@ public class Style {
 	@NotBlank
 	private String name;
 	
-	@OneToMany(cascade = CascadeType.PERSIST, fetch=FetchType.EAGER)
-	@JoinColumn(name = "id_style")
-	private List<Gym> gyms;
+
+
 
 	public Long getId() {
 		return id;
@@ -44,17 +43,10 @@ public class Style {
 		this.name = name;
 	}
 
-	public List<Gym> getGyms() {
-		return gyms;
-	}
-
-	public void setGyms(List<Gym> gyms) {
-		this.gyms = gyms;
-	}
 
 	@Override
 	public String toString() {
-		return "Style [id=" + id + ", name=" + name + ", gyms=" + gyms + "]";
+		return "Style [id=" + id + ", name=" + name +  "]";
 	}
 
 	

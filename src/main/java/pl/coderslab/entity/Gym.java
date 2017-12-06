@@ -33,6 +33,10 @@ public class Gym {
 	private String headcoach;
 	
 	@ManyToOne
+	@JoinColumn(name = "id_regions")
+	private Region region;
+	
+	@ManyToOne
 	@JoinColumn(name = "id_city")
 	private City city;
 	
@@ -43,9 +47,15 @@ public class Gym {
 	public void setCity(City city) {
 		this.city = city;
 	}
-
-	private String region;
 	
+	public Region getRegion() {
+		return region;
+	}
+
+	public void setRegion(Region region) {
+		this.region = region;
+	}
+
 	private String email;
 	@NotBlank
 	private String address;
@@ -86,14 +96,6 @@ public class Gym {
 
 
 
-	public String getRegion() {
-		return region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -120,13 +122,8 @@ public class Gym {
 
 	@Override
 	public String toString() {
-		return "Gym [id=" + id + ", name=" + name + ", headcoach=" + headcoach + ", region=" + region + ", email="
-				+ email + ", address=" + address + ", tel=" + tel + "]";
+		return "Gym [id=" + id + ", name=" + name + ", style=" + style + ", headcoach=" + headcoach + ", region="
+				+ region + ", city=" + city + ", email=" + email + ", address=" + address + ", tel=" + tel + "]";
 	}
 
-
-	
-
-	
-	
 }

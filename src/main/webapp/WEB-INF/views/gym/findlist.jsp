@@ -57,83 +57,88 @@ footer {
 <body>
 
 	<nav class="navbar navbar-inverse">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target="#myNavbar">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">Logo</a>
-		</div>
-		<div class="collapse navbar-collapse" id="myNavbar">
-			<ul class="nav navbar-nav">
-				<li><a href="/bookstore/">Home</a></li>
-				<li><a href="/bookstore/news/list">Newsfeed</a></li>
-				<li><a href="/bookstore/menu">Gym Menu</a></li>
-				<li class="active"><a href="/bookstore/gym/find">Search</a></li>
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Logo</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="/bookstore/">Home</a></li>
+					<li><a href="/bookstore/news/list">Newsfeed</a></li>
+					<li class="active"><a href="/bookstore/menu">Gym Menu</a></li>
+					<li><a href="/bookstore/gym/find">Search</a></li>
 
 
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
-						Login</a></li>
-			</ul>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
+							Login</a></li>
+				</ul>
+			</div>
 		</div>
-	</div>
 	</nav>
 
 
 	<div class="container-fluid text-center">
 		<div class="row content">
-			<div class="col-sm-2 sidenav">
-				<img src="bjjinfoaustria.png" alt="bjjinfo" width="200" height="200">
 
-
-			</div>
 			<div class="col-sm-8 text-left">
-
-				<h2>GYM LIST</h2>
-				<table>
-					<tr>
-						<!-- <th>id</th>  -->
-						<th>Name</th>
-						<th>Style</th>
-						<th>Headcoach</th>
-						<th>City</th>
-						<th>Region</th>
-						<th>Email</th>
-						<th>Address</th>
-						<th>Tel</th>
-
-					</tr>
-					<c:forEach items="${gyms}" var="gym">
-						<tr>
+				<div class="container">
+					<h2>List of gyms</h2>
 	
-							<td>${gym.name}</td>
-							<td>${gym.style.name}</td>
-							<td>${gym.headcoach}</td>
-							<td>${gym.city.name}</td>
-							<td>${gym.region}</td>
-							<td>${gym.email}</td>
-							<td>${gym.address}</td>
-							<td>${gym.tel}</td>
+					<p></p>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+						
+								<th>Name</th>
+								<th>Style</th>
+								<th>Headcoach</th>
+								<th>City</th>
+								<th>Region</th>
+								<th>Email</th>
+								<th>Address</th>
+								<th>Tel</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								
+								<td>${gym.name}</td>
+								<td>${gym.style.name}</td>
+								<td>${gym.headcoach}</td>
+								<td>${gym.city.name}</td>
+								<td>${gym.region.name}</td>
+								<td>${gym.email}</td>
+								<td>${gym.address}</td>
+								<td>${gym.tel}</td>
+							</tr>
+							<c:forEach items="${gyms}" var="gym">
+								<tr>
+								
+									<td>${gym.name}</td>
+									<td>${gym.style.name}</td>
+									<td>${gym.headcoach}</td>
+									<td>${gym.city.name}</td>
+									<td>${gym.region.name}</td>
+									<td>${gym.email}</td>
+									<td>${gym.address}</td>
+									<td>${gym.tel}</td>
+									
 
-						</tr>
-					</c:forEach>
-					
-				</table>
-			</div>
-			<div class="col-sm-2 sidenav">
-				<p>
-					<a href="#">Link</a>
-				</p>
-				<p>
-					<a href="#">Link</a>
-				</p>
-				<p>
-					<a href="#">Link</a>
-				</p>
+								</tr>
+
+							</c:forEach>
+						</tbody>
+					</table>
+
+				</div>
+
 				<!--  <div class="well">
         <p>ADS</p>
       </div>
@@ -145,49 +150,8 @@ footer {
 	</div>
 
 	<footer class="container-fluid text-center">
-	<p>Footer Text</p>
+		<p>Footer Text</p>
 	</footer>
 
 </body>
 </html>
-
-
-<!--  
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-
-<h2>GYM LIST</h2>
-<table>
-	<tr>
-		<th>id</th>
-		<th>Title</th>
-		<th>Text</th>
-		<th>Writer</th>
-		
-		
-	</tr>
-	<c:forEach items="${newss}" var="news">
-		<tr>
-			<td>${news.id}</td>
-			<td>${news.title}</td>
-			<td>${news.text}</td>
-			<td>${news.writer.firstName}</td>
-			
-			
-		
-			<td><a href="edit?id=${news.id}">edit post</a></td>
-			<td><a href="delete?id=${news.id}">delete post</a></td>
-		</tr>
-	</c:forEach>
-</table>
-<a href="add">ADD NEW POST</a><br>
-<a href="/bookstore/menu">GO BACK TO GYM MENU</a>
-
-</body>
-</html>
--->

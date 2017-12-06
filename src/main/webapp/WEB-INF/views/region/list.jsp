@@ -57,30 +57,30 @@ footer {
 <body>
 
 	<nav class="navbar navbar-inverse">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target="#myNavbar">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">Logo</a>
-		</div>
-		<div class="collapse navbar-collapse" id="myNavbar">
-			<ul class="nav navbar-nav">
-				<li><a href="/bookstore/">Home</a></li>
-				<li><a href="/bookstore/news/list">Newsfeed</a></li>
-				<li class="active"><a href="/bookstore/menu">Gym Menu</a></li>
-				<li><a href="/bookstore/gym/find">Search</a></li>
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Logo</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="/bookstore/">Home</a></li>
+					<li><a href="/bookstore/news/list">Newsfeed</a></li>
+					<li class="active"><a href="/bookstore/menu">Gym Menu</a></li>
+					<li><a href="/bookstore/gym/find">Search</a></li>
 
 
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
-						Login</a></li>
-			</ul>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
+							Login</a></li>
+				</ul>
+			</div>
 		</div>
-	</div>
 	</nav>
 
 
@@ -95,8 +95,9 @@ footer {
 			<div class="col-sm-8 text-left">
 
 				<div class="container">
-					<h2>Martial Arts</h2>
-					<a href="add" class="btn btn-default" role="button">ADD MARTIAL ART</a></br>
+					<h2>Regions</h2>
+					<a href="add" class="btn btn-default" role="button">ADD
+						REGION</a></br>
 					<p></p>
 					<table class="table table-hover">
 						<thead>
@@ -108,15 +109,16 @@ footer {
 						</thead>
 						<tbody>
 
-							<c:forEach items="${styles}" var="style">
+							<c:forEach items="${regions}" var="region">
 								<tr>
-									<td>${style.id}</td>
-									<td>${style.name}</td>
-
-
-									<td><a href="edit?id=${style.id}">edit book</a></td>
-									<td><a href="delete?id=${style.id}">delete book</a></td>
+									<td>${region.id}</td>
+									<td>${region.name}</td>
+									
 								</tr>
+								<tr>
+								<td><a href="edit?id=${region.id}">edit city</a></td>
+									<td><a href="delete?id=${region.id}">delete city</a></td>
+									</tr>
 							</c:forEach>
 						</tbody>
 					</table>
@@ -146,7 +148,7 @@ footer {
 	</div>
 
 	<footer class="container-fluid text-center">
-	<p>Footer Text</p>
+		<p>Footer Text</p>
 	</footer>
 
 </body>

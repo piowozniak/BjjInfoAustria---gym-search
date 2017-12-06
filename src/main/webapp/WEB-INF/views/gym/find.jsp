@@ -97,9 +97,19 @@ footer {
 
 				<form action="find/list" method="get">
 					<h3>Search for gym by name</h3>
-					<input type="text" name="name"><br> <button type="submit" class="btn btn-default">Submit</button>
+					
+					<input class="form-control" type="text" name="name"><br>
+					<button type="submit" class="btn btn-default">
+						<span class="glyphicon glyphicon-search"></span> Search
+					</button>
+					
 				</form>
-				
+				<form action="find/list" method="get">
+					<h3>Search for gym by name</h3>
+					<input type="text" name="name"><br>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
+
 
 			</div>
 			<div class="col-sm-2 sidenav">

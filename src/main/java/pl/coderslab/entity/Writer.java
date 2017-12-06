@@ -27,17 +27,7 @@ public class Writer {
 	
 	private String email;
 	
-	@OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
-	@JoinColumn(name="id_writer")
-	private List<News> newss = new ArrayList<>();
-
-	public List<News> getNewss() {
-		return newss;
-	}
-
-	public void setNewss(List<News> newss) {
-		this.newss = newss;
-	}
+	
 
 	public Long getId() {
 		return id;
@@ -74,7 +64,7 @@ public class Writer {
 	@Override
 	public String toString() {
 		return "Writer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", newss=" + newss + "]";
+				+  "]";
 	}
 
 }

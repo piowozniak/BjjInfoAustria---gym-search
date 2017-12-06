@@ -65,7 +65,7 @@
        
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="/bookstore/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>
@@ -85,14 +85,18 @@
       
        <h2>Gym Management</h2>
        <hr>
-       <a href="gym/add" class="btn btn-default" role="button">ADD GYM</a></br>
-       <a href="gym/list" class="btn btn-default" role="button">DISPLAY LIST OF GYMS</a></br>
-       <a href="city/add" class="btn btn-default" role="button">ADD CITY</a></br>
-       <a href="city/list" class="btn btn-default" role="button">DISPLAY LIST OF CITIES</a></br>
-       <a href="style/add" class="btn btn-default" role="button">ADD MARTIAL ART</a></br>
-       <a href="style/list" class="btn btn-default" role="button">DISPLAY LIST OF MARTIAL ARTS</a></br>
-       <a href="writer/add" class="btn btn-default" role="button">ADD WRITER</a></br>
-       <a href="writer/list" class="btn btn-default" role="button">DISPLAY WRITERS</a></br>
+     
+       <a href="gym/add" class="btn btn-default btn-sm btn-block" role="button">ADD GYM</a>
+       <a href="gym/list" class="btn btn-default btn-sm btn-block">DISPLAY LIST OF GYMS</a>
+      <a href="region/add" class="btn btn-default btn-sm btn-block" role="button">ADD REGION</a>
+       <a href="region/list" class="btn btn-default btn-sm btn-block" role="button">DISPLAY LIST OF REGIONS</a>
+       <a href="city/add" class="btn btn-default btn-sm btn-block" role="button">ADD CITY</a>
+       <a href="city/list" class="btn btn-default btn-sm btn-block" role="button">DISPLAY LIST OF CITIES</a>
+       
+       <a href="style/add" class="btn btn-default btn-sm btn-block" role="button">ADD MARTIAL ART</a>
+       <a href="style/list" class="btn btn-default btn-sm btn-block" role="button">DISPLAY LIST OF MARTIAL ARTS</a>
+       <a href="writer/add" class="btn btn-default btn-sm btn-block" role="button">ADD WRITER</a>
+       <a href="writer/list" class="btn btn-default btn-sm btn-block" role="button">DISPLAY WRITERS</a>
      	<!--  <form action="" method="post">
 		  <div class="form-group">
 		    <input type="text" name="city" value="${gym.city}" class="form-control" placeholder="type city">
@@ -100,8 +104,7 @@
 		  <button type="submit" class="btn btn-danger">Submit</button>
 		</form> -->
       
-      <h3>Test</h3>
-      <p>Lorem ipsum...</p>
+      
     </div>
     <div class="col-sm-2 sidenav">
     <p><a href="#">Link</a></p>

@@ -16,7 +16,7 @@
 </head>
 <body>
 
-	<f:form action="edit" method="post" modelAttribute="city">
+	<f:form action="edit" method="post" modelAttribute="region">
 		<div>
 			<f:errors path="*" cssClass="error" />
 		</div>
@@ -25,12 +25,6 @@
 			Name:
 			<f:input path="name" />
 			<f:errors path="name" cssClass="error"></f:errors>
-		</div>
-		<div>
-			Region:
-			<f:select path="region.id" items="${regions}" itemLabel="name"
-				itemValue="id" />
-			<f:errors path="region" cssClass="error" />
 		</div>
 
 

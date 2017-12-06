@@ -70,11 +70,12 @@ footer {
 					<li><a href="/bookstore/">Home</a></li>
 					<li class="active"><a href="/bookstore/news/list">Newsfeed</a></li>
 					<li><a href="/bookstore/menu">Gym Menu</a></li>
+					<li><a href="/bookstore/gym/find">Search</a></li>
 
 
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
+					<li><a href="/bookstore/login"><span class="glyphicon glyphicon-log-in"></span>
 							Login</a></li>
 				</ul>
 			</div>

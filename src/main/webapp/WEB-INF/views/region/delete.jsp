@@ -16,29 +16,13 @@
 </head>
 <body>
 
-	<f:form action="edit" method="post" modelAttribute="city">
+	<f:form action="" method="delete" modelAttribute="region">
+		<p>are you sure you want to delete region ${region.name}?</p>
 		<div>
-			<f:errors path="*" cssClass="error" />
+			<input type="submit" value="confirm">
 		</div>
-
-		<div>
-			Name:
-			<f:input path="name" />
-			<f:errors path="name" cssClass="error"></f:errors>
-		</div>
-		<div>
-			Region:
-			<f:select path="region.id" items="${regions}" itemLabel="name"
-				itemValue="id" />
-			<f:errors path="region" cssClass="error" />
-		</div>
-
-
 		<div>
 			<f:hidden path="id" />
-		</div>
-		<div>
-			<input type="submit" value="save edit">
 		</div>
 		<a href="../menu">go back to menu</a>
 	</f:form>

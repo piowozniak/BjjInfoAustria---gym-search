@@ -37,16 +37,18 @@
 			<f:errors path="headcoach" cssClass="error" />
 		</div>
 		<div>
+			Region:
+			<f:select path="region.id" items="${regions}" itemLabel="name"
+				itemValue="id" />
+			<f:errors path="region" cssClass="error" />
+		</div>
+		<div>
 			City:
 			<f:select path="city.id" items="${cities}" itemLabel="name"
 				itemValue="id" />
 			<f:errors path="city" cssClass="error" />
 		</div>
-		<div>
-			Region:
-			<f:input path="region" />
-			<f:errors path="region" cssClass="error" />
-		</div>
+		
 		<div>
 			Email:
 			<f:input path="email" />
@@ -68,7 +70,7 @@
 		<div>
 			<f:hidden path="id" />
 		</div>
-		<a href="../">go back to homepage</a>
+		<a href="../menu">go back to menu</a>
 	</f:form>
 
 </body>

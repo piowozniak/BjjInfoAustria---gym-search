@@ -20,14 +20,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import pl.coderslab.entity.City;
 import pl.coderslab.entity.Gym;
+import pl.coderslab.entity.Region;
 import pl.coderslab.entity.Style;
 import pl.coderslab.repository.CityRepository;
 import pl.coderslab.repository.GymRepository;
+import pl.coderslab.repository.RegionRepository;
 import pl.coderslab.repository.StyleRepository;
 
 @Controller
 public class GymController {
-
+	
+	@Autowired 
+	private RegionRepository regionRepository;
 	@Autowired
 	private GymRepository gymRepository;
 
@@ -116,8 +120,6 @@ public class GymController {
 	public String findByName() {
 		return "gym/find";
 	}
-	
-
 	@GetMapping(path = "/gym/find/list")
 	public String showGymByName(@RequestParam(name = "name", required = true) String name, Model model) {
 		List<Gym> gyms = gymRepository.findByName(name);
@@ -136,7 +138,7 @@ public class GymController {
 		City city = new City();
 		List<Gym> gyms = gymRepository.findByCity(city.getId());
 		model.addAttribute("gyms", gyms);
-		return "gym/findcitylist";
+		return "gym/findlist";
 	}
 	
 	@ModelAttribute("cities")
@@ -147,6 +149,10 @@ public class GymController {
 	@ModelAttribute("styles")
 	public List<Style> findAllStyles() {
 		return styleRepository.findAll();
+	}
+	@ModelAttribute("regions")
+	public List<Region> findAllRegions() {
+		return regionRepository.findAll();
 	}
 
 }

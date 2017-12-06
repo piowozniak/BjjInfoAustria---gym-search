@@ -10,36 +10,25 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.validator.constraints.NotBlank;
-
 @Entity
-@Table(name="cities")
-public class City {
+@Table(name="regions")
+public class Region {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
 	private Long id;
-	@NotBlank
+	
 	private String name;
-	
-	
-	@ManyToOne
-	@JoinColumn(name = "id_regions")
-	private Region region;
-	
-	public Region getRegion() {
-		return region;
-	}
 
-	public void setRegion(Region region) {
-		this.region = region;
-	}
-
+	
+	@OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinColumn(name="id_regions")
+	public List<City> cities = new ArrayList<>();
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -58,12 +47,9 @@ public class City {
 
 	@Override
 	public String toString() {
-		return "City [id=" + id + ", name=" + name + ", region=" + region + "]";
+		return "Region [id=" + id + ", name=" + name + "]";
 	}
+	
+	
 
-	
-	
-	
-	
-	
 }

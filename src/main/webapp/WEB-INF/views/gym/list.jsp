@@ -57,85 +57,89 @@ footer {
 <body>
 
 	<nav class="navbar navbar-inverse">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target="#myNavbar">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">Logo</a>
-		</div>
-		<div class="collapse navbar-collapse" id="myNavbar">
-			<ul class="nav navbar-nav">
-				<li><a href="/bookstore/">Home</a></li>
-				<li><a href="/bookstore/news/list">Newsfeed</a></li>
-				<li class="active"><a href="/bookstore/menu">Gym Menu</a></li>
-				<li><a href="/bookstore/gym/find">Search</a></li>
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Logo</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="/bookstore/">Home</a></li>
+					<li><a href="/bookstore/news/list">Newsfeed</a></li>
+					<li class="active"><a href="/bookstore/menu">Gym Menu</a></li>
+					<li><a href="/bookstore/gym/find">Search</a></li>
 
 
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
-						Login</a></li>
-			</ul>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/bookstore/login"><span class="glyphicon glyphicon-log-in"></span>
+							Login</a></li>
+				</ul>
+			</div>
 		</div>
-	</div>
 	</nav>
 
 
 	<div class="container-fluid text-center">
 		<div class="row content">
-			<div class="col-sm-2 sidenav">
-				<img src="bjjinfoaustria.png" alt="bjjinfo" width="200" height="200">
 
-
-			</div>
 			<div class="col-sm-8 text-left">
+				<div class="container">
+					<h2>List of gyms</h2>
+					<a href="add" class="btn btn-default" role="button">ADD GYM</a>
+					<p>The .table-hover class enables a hover state on table rows:</p>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>id</th>
+								<th>Name</th>
+								<th>Style</th>
+								<th>Headcoach</th>
+								<th>City</th>
+								<th>Region</th>
+								<th>Email</th>
+								<th>Address</th>
+								<th>Tel</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>${gym.id}</td>
+								<td>${gym.name}</td>
+								<td>${gym.style.name}</td>
+								<td>${gym.headcoach}</td>
+								<td>${gym.city.name}</td>
+								<td>${gym.region.name}</td>
+								<td>${gym.email}</td>
+								<td>${gym.address}</td>
+								<td>${gym.tel}</td>
+							</tr>
+							<c:forEach items="${gyms}" var="gym">
+								<tr>
+									<td>${gym.id}</td>
+									<td>${gym.name}</td>
+									<td>${gym.style.name}</td>
+									<td>${gym.headcoach}</td>
+									<td>${gym.city.name}</td>
+									<td>${gym.region.name}</td>
+									<td>${gym.email}</td>
+									<td>${gym.address}</td>
+									<td>${gym.tel}</td>
+									<td><a href="edit?id=${gym.id}">edit gym</a></td>
+									<td><a href="delete?id=${gym.id}">delete gym</a></td>
 
-				<h2>GYM LIST</h2>
-				<table>
-					<tr>
-						<!-- <th>id</th>  -->
-						<th>Name</th>
-						<th>Style</th>
-						<th>Headcoach</th>
-						<th>City</th>
-						<th>Region</th>
-						<th>Email</th>
-						<th>Address</th>
-						<th>Tel</th>
+								</tr>
 
-					</tr>
-					<c:forEach items="${gyms}" var="gym">
-						<tr>
-							<td>${gym.id}</td>
-							<td>${gym.name}</td>
-							<td>${gym.style.name}</td>
-							<td>${gym.headcoach}</td>
-							<td>${gym.city.name}</td>
-							<td>${gym.region}</td>
-							<td>${gym.email}</td>
-							<td>${gym.address}</td>
-							<td>${gym.tel}</td>
+							</c:forEach>
+						</tbody>
+					</table>
 
-							<td><a href="edit?id=${gym.id}">edit gym</a></td>
-							<td><a href="delete?id=${gym.id}">delete gym</a></td>
-						</tr>
-					</c:forEach>
-					<a href="add" class="btn btn-default" role="button">ADD GYM</a></br>
-				</table>
-			</div>
-			<div class="col-sm-2 sidenav">
-				<p>
-					<a href="#">Link</a>
-				</p>
-				<p>
-					<a href="#">Link</a>
-				</p>
-				<p>
-					<a href="#">Link</a>
-				</p>
+				</div>
+
 				<!--  <div class="well">
         <p>ADS</p>
       </div>
@@ -147,7 +151,7 @@ footer {
 	</div>
 
 	<footer class="container-fluid text-center">
-	<p>Footer Text</p>
+		<p>Footer Text</p>
 	</footer>
 
 </body>

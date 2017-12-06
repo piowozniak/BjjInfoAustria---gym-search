@@ -9,16 +9,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import pl.coderslab.entity.City;
-
+import pl.coderslab.entity.Region;
 import pl.coderslab.repository.CityRepository;
+import pl.coderslab.repository.RegionRepository;
 
 @Controller
 public class CityController {
 	
+	@Autowired 
+	private RegionRepository regionRepository;
 	@Autowired
 	private CityRepository cityRepository;
 	
@@ -82,5 +86,9 @@ public class CityController {
 			cityRepository.delete(city.getId());
 				return "redirect:list";
 
+		}
+		@ModelAttribute("regions")
+		public List<Region> findAllRegions() {
+			return regionRepository.findAll();
 		}
 }

@@ -43,7 +43,7 @@
 		<div>
 			<f:hidden path="id" />
 		</div>
-		<a href="/bookstore/menu">GO BACK TO GYM MENU</a>
+		<a href="../menu">GO BACK TO GYM MENU</a>
 	</f:form>
 </body>
 </html>
