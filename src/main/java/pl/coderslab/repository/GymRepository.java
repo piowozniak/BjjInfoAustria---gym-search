@@ -13,6 +13,6 @@ public interface GymRepository extends JpaRepository<Gym, Long> {
 
 	List<Gym> findByName(String name);
 	
-	@Query("select u from Gym u where u.city.id = ?1")
-	List<Gym> findByCity(Long id);
+//	@Query("select u from Gym u where u.city.id = ?1")
+	List<Gym> findByCity(Long Id);
 }

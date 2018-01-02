@@ -32,6 +32,7 @@ public class GymController {
 	
 	@Autowired 
 	private RegionRepository regionRepository;
+	
 	@Autowired
 	private GymRepository gymRepository;
 
@@ -58,7 +59,7 @@ public class GymController {
 	}
 
 	@PostMapping(path = "/gym/add")
-	public String addBook(@Valid Gym gym, BindingResult bresult) {
+	public String addGym(@Valid Gym gym, BindingResult bresult) {
 		if (bresult.hasErrors()) {
 			return "gym/registration";
 		} else {
@@ -89,7 +90,7 @@ public class GymController {
 	}
 
 	@PostMapping(path = "/gym/edit")
-	public String editBook(@Valid Gym gym, BindingResult bresult) {
+	public String editGym(@Valid Gym gym, BindingResult bresult) {
 
 		if (bresult.hasErrors()) {
 			return "gym/edit";
@@ -110,7 +111,7 @@ public class GymController {
 	}
 
 	@PostMapping(path = "/gym/delete")
-	public String deleteBook(Gym gym) {
+	public String deleteGym(Gym gym) {
 
 		gymRepository.delete(gym);
 		return "redirect:list";
