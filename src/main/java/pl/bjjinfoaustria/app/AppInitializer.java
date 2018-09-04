@@ -1,4 +1,4 @@
-package pl.coderslab.app;
+package pl.bjjinfoaustria.app;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -8,7 +8,7 @@ import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
-import pl.coderslab.config.AppConfig;
+import pl.bjjinfoaustria.config.AppConfig;
 
 public class AppInitializer implements WebApplicationInitializer {
 	public void onStartup(ServletContext container) throws ServletException {

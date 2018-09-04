@@ -1,15 +1,9 @@
-INSERT INTO regions (id,name) VALUES (1,'UpperAustria');
-INSERT INTO regions (id,name) VALUES (2,'LowerAustria');
-INSERT INTO regions (id,name) VALUES (3,'Tirol');
-INSERT INTO regions (id,name) VALUES (4,'Vienna');
+INSERT INTO gyms (id,name,city,region,address,phoneNumber,headCoach) VALUES (1,'BJJ','Vienna','LowerAustria','RandomStrasse','44855465465','John');
+INSERT INTO gyms (id,name,city,region,address,phoneNumber,headCoach) VALUES (2,'MMA','Vienna','LowerAustria','NullStrasse','44855465465','John');
+INSERT INTO gyms (id,name,city,region,address,phoneNumber,headCoach) VALUES (3,'MT','Linz','UpperAustria','PiotrStrasse','448523465465','John');
+INSERT INTO gyms (id,name,city,region,address,phoneNumber,headCoach) VALUES (4,'JUDO','Tirol','Tirol','AclStrasse','44555555555','John');
 
-
-
-INSERT INTO styles (id,name) VALUES (1,'BJJ');
-INSERT INTO styles (id,name) VALUES (2,'MMA');
-INSERT INTO styles (id,name) VALUES (3,'Muay Thai');
-
-INSERT INTO Writer (id,firstName,lastName,email) VALUES (1,'Piotr', 'Wozniak', 'wozn.piotr@gmail.com');
-INSERT INTO Writer (id,firstName,lastName,email) VALUES  (2,'Dave', 'Dreer', 'dave@dave.dave');
-INSERT INTO Writer (id,firstName,lastName,email) VALUES  (3,'Julian', 'Leon', 'julian@julian.julian');
-
+INSERT INTO cities (id, name) VALUES (1,'VIENNA');
+INSERT INTO cities (id, name) VALUES (2,'INNSBRUCK');
+INSERT INTO cities (id, name) VALUES (3,'LINZ');
+INSERT INTO cities (id, name) VALUES (4,'SALZBURG');

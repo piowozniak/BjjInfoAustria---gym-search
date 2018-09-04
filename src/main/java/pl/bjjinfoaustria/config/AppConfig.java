@@ -1,4 +1,4 @@
-package pl.coderslab.config;
+package pl.bjjinfoaustria.config;
 
 import java.util.Locale;
 
@@ -23,10 +23,10 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
-@ComponentScan(basePackages = "pl.coderslab")
+@ComponentScan(basePackages = "pl.bjjinfoaustria")
 @EnableTransactionManagement // umozliwia transakcje transactional
 @EnableWebMvc
-@EnableJpaRepositories(basePackages="pl.coderslab.repository")
+@EnableJpaRepositories(basePackages="pl.bjjinfoaustria.repository")
 public class AppConfig extends WebMvcConfigurerAdapter {
 
 	@Bean("entityManagerFactory")

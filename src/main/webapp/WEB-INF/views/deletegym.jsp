@@ -14,24 +14,22 @@
 </style>
 </head>
 <body>
-	<h2>hello</h2>
-	<!-- lista wszystkich -->
-	<f:form method="delete" action="/bookstore/delete">
-	<c:forEach items="${gyms}" var="gym">
+	<h2>confirm</h2>
+
+	<!--  usuwanie gym  -->
+	<f:form action="/bookstore/delete" method="delete" modelAttribute="gym">
+		<p>Are you sure you want to delete gym ${gym.name }?</p>
 		<div>
-			<tr>
-				<td>${gym.name}</td>
-				<td>${gym.city}</td>
-				<td>${gym.region}</td>
-				<td>${gym.address}</td>
-				<td>${gym.phoneNumber}</td>
-				<td>${gym.headCoach}</td>			
-								
-			</tr>
+			<input type="submit" value="confirm">
 		</div>
-	</c:forEach>
+		<div>
+			<f:hidden path="id" />
+		</div>
 	</f:form>
-	<a href="/bookstore/search">search gyms</a></br>
-	<a href="/bookstore/add">add</a>
+	<f:form action="/bookstore/search" method="get">
+		<button type="submit">cancel</button>
+	</f:form>
+
+
 </body>
 </html>
